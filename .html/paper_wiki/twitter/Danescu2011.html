@@ -15,7 +15,7 @@
       
       
       <title>
-        
+        reading_wiki » 
         Danescu2011
       </title>
       
@@ -125,18 +125,24 @@
 <p>We start by addressing the more general phenomenon of stylistic cohesion. It reflects the intuition that tweets belonging to the same conversation are closer stylistically than tweets that do not.</p>
 <p>Cohesion is defined by comparing the probability that a stylistic dimension is exhibited in tweets that are part of a conversation with the probability that the same dimension is exhibited in unrelated tweets.</p>
 <p>Formally, for a given dimension C, the measure of stylistic cohesion can be expressed through the following probabilistic expression:</p>
-<pre><code>Coh(C)≜p(TC∧RC|T ↔ R) -P(TC∧RC) (1)
-</code></pre>
+<div class="codehilite"><pre><span class="n">Coh</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>≜<span class="n">p</span><span class="p">(</span><span class="n">TC</span>∧<span class="n">RC</span><span class="o">|</span><span class="n">T</span> ↔ <span class="n">R</span><span class="p">)</span> <span class="o">-</span><span class="n">P</span><span class="p">(</span><span class="n">TC</span>∧<span class="n">RC</span><span class="p">)</span> <span class="p">(</span>1<span class="p">)</span>
+</pre></div>
+
+
 <p>where TC (respectively RC) is the event in which a tweet T (respectively R) exhibits C, and T ↔ R is the condition that tweets T and R form a conversational turn5. Thus, demonstrating that cohesion is observable for stylistic dimension C is reduced to showing that Coh(C) &gt; 0.</p>
 <p>When defining a probabilistic framework for linguistic style accommodation it is important to control for the effects of background style similarity (and provide the purity desiderata introduced in Section 1).</p>
 <p>Therefore, the goal is to measure for a given pair of users a and b who engage in a conversation whether the use of a stylistic dimension C in the initial tweet (of user a) increases the probability of that stylistic dimension in the reply (of user b) beyond what is normally expected from user b (when replying to user a).</p>
 <p>Formally, for a given stylistic dimension C and pair of users (a, b), the accommodation of user b to user a is measured by how much the fact that user a exhibits C in a tweet Ta increases the probability of b to also exhibit C in a reply to Ta:</p>
-<pre><code>Acc(a,b)(C)≜P(TbC|TaC, Tb→Ta)−P(TbC|Tb→Ta) (2)
-</code></pre>
+<div class="codehilite"><pre><span class="n">Acc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)(</span><span class="n">C</span><span class="p">)</span>≜<span class="n">P</span><span class="p">(</span><span class="n">TbC</span><span class="o">|</span><span class="n">TaC</span><span class="p">,</span> <span class="n">Tb</span>→<span class="n">Ta</span><span class="p">)</span>−<span class="n">P</span><span class="p">(</span><span class="n">TbC</span><span class="o">|</span><span class="n">Tb</span>→<span class="n">Ta</span><span class="p">)</span> <span class="p">(</span>2<span class="p">)</span>
+</pre></div>
+
+
 <p>where TaC (respectively TbC ) is the event in which a tweet posted by user a (respectively b) exhibits C, and Tb→Ta is the condition that Tb is a reply to Ta.</p>
 <p>Since the main goal is to address global accommodation (as opposed to the within-pair accommodation described above), the accommodation for a given dimension C is defined as:</p>
-<pre><code>Acc(C) = E[Acc(a,b)(C)] (3)
-</code></pre>
+<div class="codehilite"><pre><span class="n">Acc</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="p">=</span> <span class="n">E</span><span class="p">[</span><span class="n">Acc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)(</span><span class="n">C</span><span class="p">)]</span> <span class="p">(</span>3<span class="p">)</span>
+</pre></div>
+
+
 <p>where the expectation is taken over all possible conversing pairs (a, b).</p>
 <p>One important property of the way Acc is defined is its asymmetry: the accommodation of user b to user a on stylistic dimension C is potentially different from the accommodation of user a to user b on the same stylistic dimension.</p>
 <p>The notion of stylistic influence arises naturally:</p>
@@ -161,10 +167,12 @@ for a given stylistic dimension C. If I(a,b)(C) &gt; 0 we can say that b accommo
 <p>2.Users accommodate significantly more on negative emotions than on positive emotions (not illustrated, Acc(Neg. emo.) = 0.07, Acc(Pos. emo.) = 0.04; p-value smaller than 0.01 according to an independent t-test for the difference).</p>
 <p>1st person singular pronoun vs. 2nd person pronoun. In retrospect, the fact that accommodation is not exhibited for the 2nd person pronoun dimension seems natural: words like ‘you' have a different meaning for two participants involved in a conversation. However, the same holds for the 1st person singular pronoun dimension for which accommodation is observed. This could be explained by the socialpsychology hypothesis of disclosure reciprocity in dyadic relationships [6].</p>
 <p>In terms of our framework, we can test whether in expectation there is an imbalance of accommodation between participants in a conversation by verifying whether we can reject the null hypothesis E ˆ abs(I(a,b)(C)) ˜ = 0, where the expectation is taken over all conversing pairs (a, b). Using definition (4), this is reduced to rejecting:</p>
-<pre><code>E[abs(Acc(a,b)(C) − Acc(b,a)(C)]=0. and further to rejecting:
+<div class="codehilite"><pre><span class="n">E</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">Acc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)(</span><span class="n">C</span><span class="p">)</span> − <span class="n">Acc</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)(</span><span class="n">C</span><span class="p">)]=</span>0<span class="p">.</span> <span class="n">and</span> <span class="n">further</span> <span class="n">to</span> <span class="n">rejecting</span><span class="p">:</span>
 
-E[max(Acc(a,b)(C), Acc(b,a)(C)]= E[[min(Acc(a,b)(C), Acc(b,a)(C)]
-</code></pre>
+<span class="n">E</span><span class="p">[</span><span class="n">max</span><span class="p">(</span><span class="n">Acc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)(</span><span class="n">C</span><span class="p">),</span> <span class="n">Acc</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)(</span><span class="n">C</span><span class="p">)]=</span> <span class="n">E</span><span class="p">[[</span><span class="n">min</span><span class="p">(</span><span class="n">Acc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)(</span><span class="n">C</span><span class="p">),</span> <span class="n">Acc</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)(</span><span class="n">C</span><span class="p">)]</span>
+</pre></div>
+
+
 <p>where the first term is the expected accommodation of the most accommodating users (where the accommodation is always compared within each pair), and can by estimated the mean of: {max(Acc(a,b)(C), Acc(b,a)(C)|(a,b) ∈ Pairs},</p>
 <p>and the second term is the expected accommodation of the least accommodating users, estimated by the mean of: {max(Acc(a,b)(C), Acc(b,a)(C)|(a,b) ∈ Pairs}.</p>
 <p>of the most accommodating users (blue/right) in a pair. A difference in the type of imbalance between dimension is revealed; for example, while for 1st person plural pronouns in general the least accommodating users still match the style of the most accommodating participants (even though significantly less than vice-versa), for certainty the least accommodating users in general diverge from the style of the most accommodating participants.</p>
@@ -197,6 +205,8 @@ E[max(Acc(a,b)(C), Acc(b,a)(C)]= E[[min(Acc(a,b)(C), Acc(b,a)(C)]
       
       <div id="footer">
         <p>
+          
+            reading_wiki —
           
           Powered by <a href="http://markdoc.org/">Markdoc</a>.
         </p>

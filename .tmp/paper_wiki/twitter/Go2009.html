@@ -15,7 +15,7 @@
       
       
       <title>
-        
+        reading_wiki » 
         Go2009
       </title>
       
@@ -89,15 +89,19 @@
 <p>The Twitter language model has many unique properties. We take advantage of the following properties to reduce the feature space.</p>
 <p>Table 2 shows the effect of these '''feature reductions'''. These three reductions shrink the feature set down to 45.85% of its original size.</p>
 <p>We use a multinomial Naive Bayes model. Class c∗ is assigned to tweet d, where</p>
-<pre><code>c∗ = argmaccPNB(c|d)
-PNB(c|d) := (P(c)mi=1P(f|c)ni(d))/ P(d)
-</code></pre>
+<div class="codehilite"><pre><span class="n">c</span>∗ <span class="p">=</span> <span class="n">argmaccPNB</span><span class="p">(</span><span class="n">c</span><span class="o">|</span><span class="n">d</span><span class="p">)</span>
+<span class="n">PNB</span><span class="p">(</span><span class="n">c</span><span class="o">|</span><span class="n">d</span><span class="p">)</span> <span class="p">:=</span> <span class="p">(</span><span class="n">P</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="n">mi</span><span class="p">=</span>1<span class="n">P</span><span class="p">(</span><span class="n">f</span><span class="o">|</span><span class="n">c</span><span class="p">)</span><span class="n">ni</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="o">/</span> <span class="n">P</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+
+
 <p>In this formula, f represents a feature and ni(d) represents the count of feature fi found in tweet d. There are a total of m features. Parameters P(c) and P(f|c) are obtained through maximum likelihood estimates, and add-1 smoothing is utilized for unseen features.</p>
 <p>The idea behind Maximum Entropy models is that one should prefer the most uniform models that sastify a given constraint [7].</p>
 <p>MaxEnt makes no independence assumptions for its features, unlike Naive Bayes. This means we can add features like bigrams and phrases to MaxEnt without worrying about features overlapping.</p>
 <p>The model is represented by the following:</p>
-<pre><code>PME(c|d, λ) = exp[Σiλifi(c, d)] / Σ''c''' exp[Σiλifi(c, d)]
-</code></pre>
+<div class="codehilite"><pre><span class="n">PME</span><span class="p">(</span><span class="n">c</span><span class="o">|</span><span class="n">d</span><span class="p">,</span> λ<span class="p">)</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">[</span>Σ<span class="nb">i</span>λ<span class="n">ifi</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)]</span> <span class="o">/</span> Σ<span class="s">&#39;&#39;</span><span class="n">c</span><span class="o">&#39;</span><span class="s">&#39;&#39;</span> <span class="nb">exp</span><span class="p">[</span>Σ<span class="nb">i</span>λ<span class="n">ifi</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)]</span>
+</pre></div>
+
+
 <p>In this formula, c is the class, d is the tweet, and λ is a weight vector. The weight vectors decide the significance of a feature in classification. A higher weight means that the feature is a strong indicator for the class. The weight vector is found by numerical optimization of the lambdas so as to maximize the conditional probability.</p>
 <p>Theoretically, MaxEnt performs better than Naive Bayes be-cause it handles feature overlap better. However, in practice, Naive Bayes can still perform well on a variety of problems [7].</p>
 <p>The Twitter API has a limit of 100 tweets in a response for any request. The scraper has a parameter that allows us to specify the frequency of polling. We found an interval of 2 minutes is a reasonable polling parameter.</p>
@@ -141,6 +145,8 @@ PNB(c|d) := (P(c)mi=1P(f|c)ni(d))/ P(d)
       
       <div id="footer">
         <p>
+          
+            reading_wiki —
           
           Powered by <a href="http://markdoc.org/">Markdoc</a>.
         </p>
