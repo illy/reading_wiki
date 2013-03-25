@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/">
+  
+  <head>
+    
+    
+      
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+      
+      
+      <title>
+        
+        Pang2002
+      </title>
+      
+      
+        <!-- YUI CSS reset, fonts, base -->
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.0.0/build/cssreset/reset-min.css&amp;3.0.0/build/cssfonts/fonts-min.css&amp;3.0.0/build/cssbase/base-min.css" media="screen, projection" />
+        
+        <link rel="stylesheet" type="text/css" href="../../media/css/style.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="../../media/css/pygments.css" media="screen, projection" />
+      
+      
+      
+      
+      
+        
+      
+    
+  </head>
+  
+  <body >
+    
+      
+      
+        
+          
+  
+    <ol id="breadcrumbs">
+      
+        <li class="crumb-0 not-last">
+          
+            <a href="../../">index</a>
+          
+        </li>
+      
+        <li class="crumb-1 not-last">
+          
+            <a href="../">paper_wiki</a>
+          
+        </li>
+      
+        <li class="crumb-2 not-last">
+          
+            <a href="./">machine_learning</a>
+          
+        </li>
+      
+        <li class="crumb-3 last">
+          
+            Pang2002
+          
+        </li>
+      
+    </ol> <!-- ol#breadcrumbs -->
+  
+
+        
+      
+      
+      <div id="content">
+        
+        
+        
+        <p>A challenging aspect of this problem that seems to distinguish it from traditional topic-based classification is that while topics are often identifiable by keywords alone, sentiment can be expressed in a more subtle manner.</p>
+<blockquote>
+<p>Thus, sentiment seems to require more understanding than the usual topic-based classification.</p>
+</blockquote>
+<ol>
+<li>
+<p>One area of research concentrates on classifying documents according to their source or source style, with statistically-detected stylistic variation (Biber, 1988) serving as an important cue.</p>
+</li>
+<li>
+<p>Another, more related area of research is that of determining the genre of texts; subjective genres, such as “editorial”, are often one of the possible categories (Karlgren and Cutting, 1994; Kessler et al., 1997; Finn et al., 2002).</p>
+</li>
+<li>
+<p>Most previous research on sentiment-based classification has been at least partially knowledge-based.</p>
+</li>
+</ol>
+<blockquote>
+<p>Some of this work focuses on classifying the semantic orientation of individual words or phrases, using linguistic heuristics or a pre-selected set of seed words (Hatzivassiloglou and McKeown, 1997; Turney and Littman, 2002).</p>
+</blockquote>
+<ol>
+<li>Turney’s (2002) work on classification of reviews is perhaps the closest to ours.2 He applied a specific unsupervised learning technique based on the mutual information between document phrases and the words “excellent” and “poor”, where the mutual information is computed using statistics gathered by a search engine.</li>
+</ol>
+<p>Ratings were automatically extracted and converted into one of three categories: positive, negative, or neutral. For the work described in this paper, we concentrated only on discriminating between positive and negative sentiment.</p>
+<p>Intuitions seem to differ as to the difficulty of the sentiment detection problem.</p>
+<p>1.An expert on using machine learning for text categorization predicted relatively low performance for automatic methods.</p>
+<p>2.On the other hand, it seems that distinguishing positive from negative reviews is relatively easy for humans, especially in comparison to the standard text categorization problem, where topics can be closely related.</p>
+<p>3.One might also suspect that there are certain words people tend to use to express strong sentiments, so that it might suffice to simply produce a list of such words by introspection and rely on them alone to classify the texts.</p>
+<p>We conclude from these preliminary experiments that it is worthwhile to explore corpus-based techniques, rather than relying on prior intuitions, to select good indicator features and to perform sentiment classification in general.</p>
+<p>We experimented with three standard algorithms: Naive Bayes classification, maximum entropy classification, and support vector machines. The philosophies behind these three algorithms are quite different, but each has been shown to be effective in previous text categorization studies.</p>
+<p>Despite its simplicity and the fact that its conditional independence assumption clearly does not hold in real-world situations, Naive Bayes-based text categorization still tends to perform surprisingly well (Lewis, 1998); indeed, Domingos and Pazzani (1997) show that Naive Bayes is optimal for certain problem classes with highly dependent features.</p>
+<p>Importantly, unlike Naive Bayes, MaxEnt makes no assumptions about the relationships between features, and so might potentially perform better when conditional independence assumptions are not met.</p>
+<p>One unconventional step we took was to attempt to model the potentially important contextual effect of negation: clearly “good” and “not very good” indicate opposite sentiment orientations.</p>
+<p>Because training MaxEnt is expensive in the number of features, we limited consideration to</p>
+<blockquote>
+<p>1.the 16165 unigrams appearing at least four times in our 1400-document corpus (lower count cutoffs did not yield significantly different results)</p>
+<p>2.the 16165 bigrams occurring most often in the same data (the selected bigrams all occurred at least seven times).</p>
+<p>3.Note that we did not add negation tags to the bigrams, since we consider bigrams (and n-grams in general) to be an orthogonal way to incorporate context.</p>
+</blockquote>
+<ol>
+<li>The classification accuracies resulting from using only unigrams as features are shown in line (1) of Figure 3.</li>
+</ol>
+<blockquote>
+<p>As a whole, the machine learning algorithms clearly surpass the random-choice baseline of 50%. They also handily beat our two human-selected-unigram baselines of 58% and 64%, and, furthermore, perform well in comparison to the 69% baseline achieved via limited access to the test-data statistics, although the improvement in the case of SVMs is not so large.</p>
+</blockquote>
+<ol>
+<li>On the other hand, in topic-based classification, all three classifiers have been reported to use bag-of-unigram features to achieve accuracies of 90% and above for particular categories (Joachims, 1998; Nigam et al., 1999) — and such results are for settings with more than two classes.</li>
+</ol>
+<blockquote>
+<p>This provides suggestive evidence that sentiment categorization is more difficult than topic classification, which corresponds to the intuitions of the text categorisation expert mentioned above.</p>
+</blockquote>
+<p>However, the effect of this information seems to be a wash: as depicted in line (5) of Figure 3, the accuracy improves slightly for Naive Bayes but declines for SVMs, and the performance of MaxEnt is unchanged.</p>
+<p>The results, shown in line (6) of Figure 3, are relatively poor: the 2633 adjectives provide less useful information than unigram presence. Indeed, line (7) shows that simply using the 2633 most frequent unigrams is a better choice, yielding performance comparable to that of using (the presence of) all 16165 (line (2)).</p>
+<blockquote>
+<p>This may imply that applying explicit feature-selection algorithms on unigrams could improve performance.</p>
+</blockquote>
+<p><strong>Position</strong> An additional intuition we had was that the position of a word in the text might make a difference:</p>
+<p>In terms of relative performance, Naive Bayes tends to do the worst and SVMs tend to do the best, although the differences aren’t very large.</p>
+<p>What accounts for these two differences — difficulty and types of information proving useful — between topic and sentiment classification, and how might we improve the latter?</p>
+<p>As it turns out, a common phenomenon in the documents was a kind of “thwarted expectations” narrative, where the author sets up a deliberate contrast to earlier discussion</p>
+<p>Furthermore, it seems likely that this thwarted-expectations rhetorical device will appear in many types of texts (e.g., editorials) devoted to expressing an overall opinion about some topic.</p>
+<h3>Summary</h3>
+<p>Pang, Lee &amp; Vaithyanathan (2002) test the NB, MaxEnt and SVM algorithms respectively for sentiment analysis purpose. They disregard the previous sentiment analysis research based on topic classification and genre detection, and focus on the overall sentiment according to unigram and bigram features. NB and SVM perform better than MaxEnt in the test, and all of them overperform the baseline of manual analysis. However, the final result is not as good as topic-based classification. They also notice that the position of a word can affect the performance of the evaluation.</p>
+        
+        
+        
+        
+        <hr class="clear" />
+      </div> <!-- div#content -->
+      
+      
+      <div id="footer">
+        <p>
+          
+          Powered by <a href="http://markdoc.org/">Markdoc</a>.
+        </p>
+      </div>
+      
+    
+    
+    
+    <hr class="clear" />
+  </body>
+</html>

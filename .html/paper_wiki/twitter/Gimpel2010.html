@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/">
+  
+  <head>
+    
+    
+      
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+      
+      
+      <title>
+        
+        Gimpel2010
+      </title>
+      
+      
+        <!-- YUI CSS reset, fonts, base -->
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.0.0/build/cssreset/reset-min.css&amp;3.0.0/build/cssfonts/fonts-min.css&amp;3.0.0/build/cssbase/base-min.css" media="screen, projection" />
+        
+        <link rel="stylesheet" type="text/css" href="../../media/css/style.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="../../media/css/pygments.css" media="screen, projection" />
+      
+      
+      
+      
+      
+        
+      
+    
+  </head>
+  
+  <body >
+    
+      
+      
+        
+          
+  
+    <ol id="breadcrumbs">
+      
+        <li class="crumb-0 not-last">
+          
+            <a href="../../">index</a>
+          
+        </li>
+      
+        <li class="crumb-1 not-last">
+          
+            <a href="../">paper_wiki</a>
+          
+        </li>
+      
+        <li class="crumb-2 not-last">
+          
+            <a href="./">twitter</a>
+          
+        </li>
+      
+        <li class="crumb-3 last">
+          
+            Gimpel2010
+          
+        </li>
+      
+    </ol> <!-- ol#breadcrumbs -->
+  
+
+        
+      
+      
+      <div id="content">
+        
+        
+        
+        <p>One of the most fundamental parts of the linguistic pipeline is part-of-speech (POS) tagging, a basic form of syntactic analysis which has countless applications in NLP.</p>
+<p>Tagging performance degrades on out-of-domain data, and Twitter poses additional challenges due to the conversational nature of the text, the lack of conventional orthography, and 140-character limit of each message (“tweet”).</p>
+<p>This was made possible by two things:</p>
+<p>1.an annotation scheme that fits the unique characteristics of our data and provides an appropriate level of linguistic detail;</p>
+<p>2.a feature set that captures Twitter-specific properties and exploits existing resources such as tag dictionaries and phonetic normalization.</p>
+<p>Next, we obtained a random sample of mostly American English1 tweets from October 27, 2010, automatically tokenized them using a Twitter tokenizer (O’Connor et al., 2010b),2 and pre-tagged them using the WSJ-trained Stanford POS Tagger (Toutanova et al., 2003) in order to speed up manual annotation.</p>
+<blockquote>
+<p>Heuristics were used to mark tokens belonging to special Twitter categories, which took precedence over the Stanford tags.</p>
+</blockquote>
+<p>The annotation process uncovered several situations for which our tagset, annotation guidelines, and tokenization rules were deficient or ambiguous.</p>
+<p>We set out to develop a POS inventory for Twitter that would be intuitive and informative—while at the same time simple to learn and apply—so as to maximize tagging consistency within and across annotators.</p>
+<p>http://github.com/brendano/tweetmotif</p>
+<p>Our first round of annotation revealed that, due to nonstandard spelling conventions, tokenizing under a traditional scheme would be much more difficultthan for Standard English text.</p>
+<blockquote>
+<p>For example, apostrophes are often omitted, and there are frequently words like ima (short for I’m gonna) that cut across traditional POS categories.</p>
+</blockquote>
+<p>Therefore, we opted not to split contractions or possessives, as is common in English corpus preprocessing; rather, we introduced four new tags for combined forms: {nominal, proper noun} × {verb, possessive}.5</p>
+<p>Figure 2 shows where tags in our data tend to occur relative to the middle word of the tweet.</p>
+<blockquote>
+<p>We see that Twitter-specific tags have strong positional preferences: at-mentions (@) and Twitter discourse markers (~) tend to occur towards the beginning of messages, whereas URLs (U), emoticons (E), and categorizing hashtags (#) tend to occur near the end.</p>
+</blockquote>
+<p>Our tagger is a conditional random field (CRF; Lafferty et al., 2001 http://www.cis.upenn.edu/~pereira/papers/crf.pdf), enabling the incorporation of arbitrary local features in a log-linear model.</p>
+<blockquote>
+<p>Our base features include:</p>
+<p>1.a feature for each word type,</p>
+<p>2.a set of features that check whether the word contains digits or hyphens,</p>
+<p>3.suffix features up to length 3,</p>
+<p>4.features looking at capitalization patterns in the word.</p>
+</blockquote>
+<p>Microbloggers are inconsistent in their use of capitalization, so we compiled gazetteers of tokens which are frequently capitalized.</p>
+<p>Unlike previous work that uses tag dictionaries as hard constraints, we use them as soft constraints since we expect lexical coverage to be poor and the Twitter dialect of English to vary significantly from the PTB domains.</p>
+<p>Since Twitter includes many alternate spellings of words, we used the <strong>Metaphone algorithm</strong> (Philips, 1990 http://en.wikipedia.org/wiki/Metaphone) to create a coarse phonetic normalization of words to simpler keys.</p>
+<blockquote>
+<p>We include two types of features.</p>
+<p>1.we use the Metaphone key for the current token, complementing the base model’s word features.</p>
+<p>2.we use a feature indicating whether a tag is the most frequent tag for PTB words having the same Metaphone key as the current token.</p>
+</blockquote>
+<p>Instead, we retrained it on our labeled data, using a standard set of features: words within a 5-word window, word shapes in a 3-word window, and up to length-3 prefixes, length-3 suffixes, and prefix/suffix pairs.1</p>
+<p>Substantial challenges remain; for example, despite the NAMES feature, the system struggles to identify proper nouns with nonstandard capitalization.</p>
+<p>The system also struggles with the miscellaneous category (G), which covers many rare tokens, including obscure symbols and artifacts of tokenization errors.</p>
+<p>http://www.ark.cs.cmu.edu/TweetNLP.</p>
+<h3>Summary</h3>
+<p>The linguistic features of tweet bring challenges to analysis, for instance, POS-tagging is rather difficult. Gimpel et al's (2011) develop a specific POS tag set for tweets based on CRT algorithm and metaphone algorithm. Moreover, they try to correct wrong capitalizations in tweets by compiling gazetteers, and use traditional tag dictionary as soft constraints to implement the annotation. Their result shows a 90% accuracy of tagging, and also the common tag position relating to the middle word of tweet. However, some challenges still remain: proper nouns with nonstandard capitalisation cannot be well recognised, and the G category which involving many abbreviations cannot be well classified.</p>
+        
+        
+        
+        
+        <hr class="clear" />
+      </div> <!-- div#content -->
+      
+      
+      <div id="footer">
+        <p>
+          
+          Powered by <a href="http://markdoc.org/">Markdoc</a>.
+        </p>
+      </div>
+      
+    
+    
+    
+    <hr class="clear" />
+  </body>
+</html>

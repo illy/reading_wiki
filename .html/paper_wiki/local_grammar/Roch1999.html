@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/">
+  
+  <head>
+    
+    
+      
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+      
+      
+      <title>
+        
+        Roch1999
+      </title>
+      
+      
+        <!-- YUI CSS reset, fonts, base -->
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.0.0/build/cssreset/reset-min.css&amp;3.0.0/build/cssfonts/fonts-min.css&amp;3.0.0/build/cssbase/base-min.css" media="screen, projection" />
+        
+        <link rel="stylesheet" type="text/css" href="../../media/css/style.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="../../media/css/pygments.css" media="screen, projection" />
+      
+      
+      
+      
+      
+        
+      
+    
+  </head>
+  
+  <body >
+    
+      
+      
+        
+          
+  
+    <ol id="breadcrumbs">
+      
+        <li class="crumb-0 not-last">
+          
+            <a href="../../">index</a>
+          
+        </li>
+      
+        <li class="crumb-1 not-last">
+          
+            <a href="../">paper_wiki</a>
+          
+        </li>
+      
+        <li class="crumb-2 not-last">
+          
+            <a href="./">local_grammar</a>
+          
+        </li>
+      
+        <li class="crumb-3 last">
+          
+            Roch1999
+          
+        </li>
+      
+    </ol> <!-- ol#breadcrumbs -->
+  
+
+        
+      
+      
+      <div id="content">
+        
+        
+        
+        <p>In language processing, finite-state models are not a lesser evil that bring simplicity and efficiency at the cost of accuracy . On the contrary they provide a very natural framework to describe complex linguistic phenomena.</p>
+<p>However, finite-state modeling is usually thought as a necessary evil in the sense that more powerful formalisms such as context-free grammars are more accurate but of intractable size for reasonable efficiency .</p>
+<p>One of the main drawback in using context-free grammars for modeling language is the inability or the difficult y of handling various types of deletion</p>
+<blockquote>
+<p>(1) He expected John to buy a new book.</p>
+</blockquote>
+<p>In the transformational grammar of Z. S. Harris (see [9] for instance), this sentence is analyzed as the verb expected (an operator) taking three arguments: (1) the subject he, (2) the first complement t John and (3) the sentence John buys a new book; the application of the verb operator deletes the subject of the last argument to transform the sentence into the infinitive clause to buy a new book.</p>
+<p>This might not seem to be a difficult problem at first but recall that grammars have to be lexicalized (see [5, 2] for instance), that is, each rule should contain an explicit word, and therefore this type of duplication, which is only one duplication among many others, has to be repeated throughout the whole lexicon.</p>
+<p>While other features of transducer parsing, such as</p>
+<p>1.factorization, determinization and minimization of transducers can be used to generate more efficient parsers,</p>
+<p>2.the grammar compilation, input sentences and the parsing use homogeneous representations,</p>
+<p>3.parsing and building the grammar are the same operation, i.e. a rational transduction,</p>
+<p>4.transforming a CFG into a transducer is yet another transduction,
+j
+Finite-state transducers (FST) are informally (see [1, 16] for formal definitions) finite-state automata for which each transition is labeled by a pair of labels.</p>
+<p>A FST defines a function from strings in to strings in the following way: given an input sequence of symbols, if a path of the FST can be followed while reading the input sequence on the input label, then the concatenation of the output labels of the transitions of this path is an output for the input sequence.</p>
+<p>Parsing will be considered here as a string transformation process.</p>
+<p>Namely, if ∑g represents the set of symbols, such as (N, N) or (S, used to mark the syntactic analysis; if ∑w is the list of words in the language, then a parser is a mapping</p>
+<pre><code>parser : ∑*w ➝ 2(∑g∙∑w∙∑g)*
+</code></pre>
+<p>One way of parsing context-free grammars with finite-state transducers consists of modeling a top-down analysis. Consider the sentence</p>
+<p>The first step of building a parser consists of transforming each entry of this syntactic dictionary into a fnite-state transducer</p>
+<p>The finite-state transducer related to an entry will be the machine responsible for analyzing a sentence with this structure.</p>
+<p>Each transducer represents a transduction from ∑<em> to ∑</em> where ∑ = ∑w ⋃ ∑g.</p>
+<p>Given the dictionary we define the grammar</p>
+<pre><code>Tdic = ⋃(Ti ∈ dic)Ti as being the union of all the transducers defined in the dictionary
+</code></pre>
+<p>This transducer being given, parsing simply consists of applying the transducer on the input and checking whether the output is different from the input; if it is, then the transducer is applied again. The process is repeated until the input is not modified. Formally,</p>
+<pre><code>paser = ∞Tdic
+</code></pre>
+<p>three categories of sentences have to be considered to build complete grammars.</p>
+<p>1.The first category consists of free sentences like John eats potatoes,</p>
+<p>2.the second one consists of sentences like John makes concessions, with complements with a smaller degree of variability. They are called support verb constructions.</p>
+<p>3.Finally, the third category consists of frozen sentences, or idiomatic expressions,)</p>
+        
+        
+        
+        
+        <hr class="clear" />
+      </div> <!-- div#content -->
+      
+      
+      <div id="footer">
+        <p>
+          
+          Powered by <a href="http://markdoc.org/">Markdoc</a>.
+        </p>
+      </div>
+      
+    
+    
+    
+    <hr class="clear" />
+  </body>
+</html>

@@ -1,10 +1,8 @@
 #Chapter 1 Introduction
 
-##1.1The social web and searchable talk
+##1.1 The social web and searchable talk
 
 ###Social web and social media
-
-This kind of **discourse tagging** is the beginning of *searchable talk*, a change in social relations whereby we mark our discourse so that it can be found by others, in effect so that we can bond around particular values (Zappavigna 2011b). (p1)
 
 In other words, **virtual groupings** afforded by features of electronic text, such as metadata, create alignments between people who have not necessarily directly interacted online. (p1)
 
@@ -16,49 +14,52 @@ The advent of social media, technology that aims to support ambient interpersona
 
 **Social media** is an umbrella term generally applied to web-based service that facilitate some form of social interaction or 'networking'.
 
- >1. Websites where the design-principle is explicitly about allowing users to create and develop online relationships with 'friends' or 'followers'.
+1. Websites where the design-principle is explicitly about allowing users to create and develop online relationships with 'friends' or 'followers'.
 
- >2. Platforms where the focus is on generating and sharing content. (p2)
-
-They can be somewhat of a 'moving target' for scholars(Hogan and Quan-Haase 2010). (p3)
+2. Platforms where the focus is on generating and sharing content. (p2)
 
 Perhaps the most commonly used form of social media is the **social networking service** (SNS). SNSs are services with which users create an online profile about themselves with the foal of connecting with other people and being 'findable'. (p5)
 
 Indeed, interactions via social media are usually linked to some form conversation. (p5)
 
-Depending on the kind of relationship being construed, the 'dialogue' may be fairly limited, often involving two main avenues: making initial contact with a user and then maintaining occasional contact at important dates, such as birthday (2010). (p5)
+Depending on the kind of relationship being construed, the 'dialogue' may be fairly limited, often involving two main avenues:
 
-Most SNSs have in common a number of basic functions: profile creation, the ability to generate a list of affiliates of affiliated users. (p5) 
+1. making initial contact with a user;
+
+2. maintaining occasional contact at important dates, such as birthday (2010). (p5)
+
+Most SNSs have in common a number of **basic functions**: profile creation, the ability to generate a list of affiliates of affiliated users. (p5) 
 
 Four affordances boyd suggests are of particular significance:
 
- >1. persistence (capture and archiving of content);
+1. persistence (capture and archiving of content);
 
- >2. replicability (duplication of content);
+2. replicability (duplication of content);
 
- >3. scalability (broad visibility of content);
+3. scalability (broad visibility of content);
 
- >4. searchability (access to content via search). (p5)
+4. searchability (access to content via search). (p5)
 
 ###About the book
 
-The method adopted in this book for exploring this patterning combines quantitative analysis of a large 100 million word corpus of microposts, HERMES with a qualitative social semiotic approach to discourse analysis. (p3)
+The method adopted in this book for exploring this patterning combines quantitative analysis of a large 100 million word corpus of microposts, HERMES with *a qualitative social semiotic approach to discourse analysis*. (p3)
 
-The theme trying these studies together is 'ambient affiliation': how social bonds are realized in language, in particular, the emerging searchable talk of microblogging. (p14)
+The **theme** trying these studies together is 'ambient affiliation': how social bonds are realized in language, in particular, the emerging searchable talk of microblogging. (p14)
 
 ###Twitter and tweet
 
-The extremely large volume of naturally occurring language is of great interest, as data to linguist. (p4)
+**The extremely large volume of naturally occurring language is of great interest, as data to linguist**. (p4)
 
-This content is public and searchable unless the user actively makes his or her account private. (p3)
 
 In addiction, Twitter collects supplementary metadata about a tweet. (p3)
 
- >Folks were tweeting 5000 times a day in 2007. By 2008, that number, was 300,000, and by 2009 it had grown to 2.5 million per day. Tweets grew 1,400% last year to 3.5 million per day. Today, we are seeing 50 million per day - that's an average of 600 tweets per second. (Weil 2010) (p4)
+> Folks were tweeting 5000 times a day in 2007. By 2008, that number, was 300,000, and by 2009 it had grown to 2.5 million per day. Tweets grew 1,400% last year to 3.5 million per day. Today, we are seeing 50 million per day - that's an average of 600 tweets per second. (Weil 2010) (p4)
 
 The large volume of data made publicly available by these services offers a fascinating window on social life, though it also raises a range of ethical concerns about how this data is used (Parrish 2010). (p5)
 
 ####Hashtag
+
+This kind of **discourse tagging** is the beginning of *searchable talk*, a change in social relations whereby we mark our discourse so that it can be found by others, in effect so that we can bond around particular values (Zappavigna 2011b). (p1)
 
 **Hashtags** are an emergent convention for labelling the topic of a micropost and a form of metadata incorporated into posts. (p1)
 
@@ -82,6 +83,8 @@ An important function of social media is sharing experience of the everyday with
 
 
 ##1.2 Interpersonal search
+
+This content is public and searchable unless the user actively makes his or her account private. (p3)
 
 The advent of social media means that the function of online talk has become increasingly focused on negotiating and maintaining relationship. (p6)
 
@@ -145,9 +148,9 @@ The theory refers to the domain of meaning making associated with forging social
 
 The language used in social media, particularly microblogging, is under significant interpersonal pressure. (p12)
 
- >1. It is deployed in a modality where interpersonal meanings that might otherwise be expressed paralinguistically must be expressed in other means.
+1. It is deployed in a modality where interpersonal meanings that might otherwise be expressed paralinguistically must be expressed in other means.
 
- >2. On the other hand, it is bound by the need for linguistic economies arising from the character constraints imposed on microposts. (p12)
+2. On the other hand, it is bound by the need for linguistic economies arising from the character constraints imposed on microposts. (p12)
 
 Coupling is also central to the view of community and affiliation proposed in this book. (p12)
 

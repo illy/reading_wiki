@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/">
+  
+  <head>
+    
+    
+      
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+      
+      
+      <title>
+        
+        Oconnor2010
+      </title>
+      
+      
+        <!-- YUI CSS reset, fonts, base -->
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.0.0/build/cssreset/reset-min.css&amp;3.0.0/build/cssfonts/fonts-min.css&amp;3.0.0/build/cssbase/base-min.css" media="screen, projection" />
+        
+        <link rel="stylesheet" type="text/css" href="../../media/css/style.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="../../media/css/pygments.css" media="screen, projection" />
+      
+      
+      
+      
+      
+        
+      
+    
+  </head>
+  
+  <body >
+    
+      
+      
+        
+          
+  
+    <ol id="breadcrumbs">
+      
+        <li class="crumb-0 not-last">
+          
+            <a href="../../">index</a>
+          
+        </li>
+      
+        <li class="crumb-1 not-last">
+          
+            <a href="../">paper_wiki</a>
+          
+        </li>
+      
+        <li class="crumb-2 not-last">
+          
+            <a href="./">twitter</a>
+          
+        </li>
+      
+        <li class="crumb-3 last">
+          
+            Oconnor2010
+          
+        </li>
+      
+    </ol> <!-- ol#breadcrumbs -->
+  
+
+        
+      
+      
+      <div id="content">
+        
+        
+        
+        <p>We find that temporal smoothing is a critically important issue to support a successful model.</p>
+<p>This comprises a roughly uniform sample of public messages, in the range of 100,000 to 7 million messages per day. (The primary source of variation is growth of Twitter itself; its message volume increased by a factor of 50 over this twoyear time period.)</p>
+<p>Most Twitter users appear to live in the U.S., but we made no systematic attempt to identify user locations or even message language, though our analysis technique should largely ignore non-English messages.</p>
+<p>There probably exist many further issues with this text sample; for example, the demographics and communication habits of the Twitter user population probably changed over this time period, which should be adjusted for given our desire to measure attitudes in the general population.</p>
+<p>Two well-known surveys that measure U.S. consumer confidence are the Consumer Confidence Index from the Consumer Board, and the Index of Consumer Sentiment (ICS) from the Reuters/University of Michigan Surveys of Consumers. We use the latter,as it is more extensively studied in economics, having been conducted since the 1950s.</p>
+<p>We also use another poll, the Gallup Organization’s “Economic Confidence” index,3 which is derived from answers to two questions that ask interviewees to to rate the overall economic health of the country.</p>
+<p><em>If there is enough training data, this could be formulated as a topic-sentiment model (Mei et al. 2007), in which the topics and sentiment of documents are jointly inferred</em>.</p>
+<p>Our dataset, however, is asymmetric, with millions of text messages per day (and millions of distinct vocabulary items) but only a few hundred polling data points in each problem.</p>
+<p>The signal-to-noise ratio is typical of information retrieval problems: we are only interested in information contained in a small fraction of all messages.</p>
+<p>We therefore opt to use a transparent, deterministic approach based on prior linguistic knowledge, counting instances of positive-sentiment and negative-sentiment words in the context of a topic keyword</p>
+<p>Positive and negative words are defined by the subjectivity lexicon from OpinionFinder, a word list containing about 1,600 and 1,200 words marked as positive and negative, respectively (Wilson, Wiebe, and Hoffmann 2005).6 We do not use the lexicon’s distinctions between weak and strong words.</p>
+<p>A message is defined as positive if it contains any positive word, and negative if it contains any negative word. (This allows for messages to be both positive and negative.)</p>
+<p>We only use messages containing a topic keyword, manually specified for each poll: •</p>
+<ol>
+<li>
+<p>For consumer confidence, we use economy, job, and jobs.</p>
+</li>
+<li>
+<p>For presidential approval, we use Obama. </p>
+</li>
+<li>
+<p>For elections, we use Obama and Mccain.</p>
+</li>
+</ol>
+<p>In the earliest and smallest part of our dataset, the topic samples sometimes come out just several hundred messages per day; but by late 2008, there are thousands of messages per day for most datasets.</p>
+<p>However, we are only interested in aggregate sentiment. A high error rate merely implies the sentiment detector is a noisy measurement instrument.</p>
+<p>In order to derive a more consistent signal, and following the same methodology used in public opinion polling, we smooth the sentiment ratio with one of the simplest possible temporal smoothing techniques, a moving average over a window of the past k days:</p>
+<p><strong>Smoothing is a critical issue.</strong> It causes the sentiment ratio to respond more slowly to recent changes, thus forcing consistent behavior to appear over longer periods of time. Too much smoothing, of course, makes it impossible to see fine-grained changes to aggregate sentiment.</p>
+<p>Several prior studies have estimated and made use of <strong>aggregated text sentiment</strong>.</p>
+<p>We always consider the last day of the poll’s window to be the poll date, which is the earliest possible day that the information could actually be used</p>
+<p>Also note that more smoothing increases the correlation: for Gallup, 7-, 15-, and 30-day windows peak at r = 71.6%, 76.3%, and 79.4% respectively.</p>
+<p>We also found that the <strong>topic frequencies</strong> correlate with polls much more than the sentiment scores.</p>
+<p>Furthermore, the Obama message volume substantially correlates to the poll numbers.</p>
+<p>The elections setting may be structurally more complex than presidential job approval. In many of the tracking polls, people can choose to answer any Obama, McCain, undecided, not planning to vote, and third-party candidates.</p>
+        
+        
+        
+        
+        <hr class="clear" />
+      </div> <!-- div#content -->
+      
+      
+      <div id="footer">
+        <p>
+          
+          Powered by <a href="http://markdoc.org/">Markdoc</a>.
+        </p>
+      </div>
+      
+    
+    
+    
+    <hr class="clear" />
+  </body>
+</html>
