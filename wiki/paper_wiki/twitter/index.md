@@ -14,6 +14,8 @@ Go, A. & Bhayani, R. (2010). [Exploiting the Unique Characteristics of Tweets fo
 
 Mittal, A., & Goel, A. (2011). [Stock Prediction Using Twitter Sentiment Analysis](Mittal2011). Mittal2011
 
+Morstatter et al. (2013). [Is the Sample Good Enough? Comparing Data from Twitter's Streaming API with Twitter's Firehose](Morstatter2013). Morstatter:2013p30599
+
 O'Connor, B., Balasubramanyan, r., Routledge, B., & Smith, N. (2010). [From Tweets to polls: Linking text sentiment to public opinion time seriesz.](Oconnor2010). OConnor:2010p962
 
 Ritter, A., Cherry, C., Dolan, B. (2010). [Unsupervised modeling of twitter conversations](RItter2010). Ritter:2010p14612

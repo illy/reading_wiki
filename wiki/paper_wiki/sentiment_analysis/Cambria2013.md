@@ -24,17 +24,15 @@ Some of the most commonly used features are _term frequency_ and _presence_.
 
 The latter is a binary-valued feature vectors in which the entries _merely_ indicate whether a term occurs (value 1) or not (value 0) formed a more effective basis for review polarity classification.
 
-Other term-based features are often added to the features vector. Position is one of these, in consideration of how the position of a token in a text unit can affect the way in which the token affects the sentiment of the text.
+Other term-based features are often added to the features vector. **Position** is one of these, in consideration of how the position of a token in a text unit can affect the way in which the token affects the sentiment of the text.
 
 Also presence n-grams, typically bi-grams and trigrams, are often taken into account as useful features. Some methods also rely on the distance between terms.
 
 Part of speech (POS) information (nouns, adjectives, adverbs, verbs, etc.) is also commonly exploited in general textual analysis as a basic form of word-sense disambiguation.
 
-In other works, finally, the detection of sentiments was performed through selected phrases, which were chosen via a number of pre-specified POS patterns, most including an adjective or an adverb.
+In other works, finally, the detection of sentiments was performed through selected phrases, which were chosen via a number of pre-specified POS patterns, most including an *adjective* or an *adverb*.
 
-Moreover, most of the literature on sentiment analysis has focused on text written in English and, consequently, most of the resources developed, e.g., sentiment lexicons and corpora, are in English.
-
-Adapting such resources to other languages can be considered as a domain adaptation problem.
+Moreover, most of the literature on sentiment analysis has focused on text written in English and, consequently, most of the resources developed, e.g., sentiment lexicons and corpora, are in English. Adapting such resources to other languages can be considered as a domain adaptation problem.
 
 ###From Heuristics to discourse structure
 

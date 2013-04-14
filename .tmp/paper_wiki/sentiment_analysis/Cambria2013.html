@@ -78,60 +78,68 @@
         
         
         
-        <p>Another instance of binary sentiment classification is agreement detection, that is, given a pair of text documents, deciding whether they should receive the same or differing sentiment-related labels.</p>
-<p>Typically, sentiment analysis is performed over on- topic document, e.g., on the result of a topic-based search engine.</p>
-<p>However, several studies suggested that managing these two task jointly can be beneficial for the overall performances.</p>
-<p>This review paper intends to give an overview on past, present, and future trends of sentiment analysis by delving into the evolution of different opinion mining systems from heuristics to discourse structure, from coarse- to fine- grained, from keyword- to concept-based analysis. More comprehensive surveys on sentiment analysis can be found in [1], [2], [3].</p>
-<p>In this case, it is therefore necessary to identify the topics and separate the opinions associated with each of them.</p>
-<p>Most of the existing approaches to opinion mining and sentiment analysis rely on the extraction of a vector representing the most salient and important text features, which is later used for classification purposes.</p>
-<p>Some of the most commonly used features are term frequency and presence.</p>
-<p>The latter is a binary-valued feature vectors in which the entries merely indicate whether a term occurs (value 1) or not (value 0) formed a more effective basis for review polarity classification.</p>
+        <p>This review paper intends to give an overview on past, present, and future trends of sentiment analysis by delving into the evolution of different opinion mining systems from heuristics to discourse structure, from coarse- to fine-grained, from keyword-to concept-based analysis. More comprehensive surveys on sentiment analysis can be found in [1], [2], [3].</p>
+<h2>Common sentiment analysis tasks</h2>
 <p>The basic task of opinion mining is polarity classification, that is, given an opinionated piece of text wherein it is assumed that the overall opinion is about one single issue or item, classify the opinion as falling under one of two opposing sentiment polarities.</p>
-<p>Other term-based features are often added to the features vector. Position is one of these, in consideration of how the position of a token in a text unit can affect the way in which the token affects the sentiment of the text.</p>
-<p>Also presence n-grams, typically bi-grams and tri-grams, are often taken into account as useful features. Some methods also rely on the distance between terms.</p>
-<p>Part of speech (POS) information (nouns, adjectives, adverbs, verbs, etc.) is also</p>
-<p>commonly exploited in general textual analysis as a basic form of word-sense disambiguation.</p>
+<p>Another instance of binary sentiment classification is agreement detection, that is, given a pair of text documents, deciding whether they should receive the same or differing sentiment-related labels.</p>
+<h3>Topic detection</h3>
+<p>Typically, sentiment analysis is performed over on-topic document, e.g., on the result of a topic-based search engine.</p>
+<p>However, several studies suggested that managing these two task jointly can be beneficial for the overall performances.</p>
+<p>In this case, it is therefore necessary to identify the topics and separate the opinions associated with each of them.</p>
+<p>While a topic is more likely to be emphasised by frequent occurrences of certain keywords, overall sentiment may not usually be highlighted through repeated use of the same terms.</p>
+<h2>Evolution of opinion mining</h2>
+<p>Most of the existing approaches to opinion mining and sentiment analysis rely on <strong>the extraction of a vector representing the most salient and important text features, which is later used for classification purposes</strong>.</p>
+<p>Some of the most commonly used features are <em>term frequency</em> and <em>presence</em>.</p>
+<p>The latter is a binary-valued feature vectors in which the entries <em>merely</em> indicate whether a term occurs (value 1) or not (value 0) formed a more effective basis for review polarity classification.</p>
+<p>Other term-based features are often added to the features vector. <strong>Position</strong> is one of these, in consideration of how the position of a token in a text unit can affect the way in which the token affects the sentiment of the text.</p>
+<p>Also presence n-grams, typically bi-grams and trigrams, are often taken into account as useful features. Some methods also rely on the distance between terms.</p>
+<p>Part of speech (POS) information (nouns, adjectives, adverbs, verbs, etc.) is also commonly exploited in general textual analysis as a basic form of word-sense disambiguation.</p>
+<p>In other works, finally, the detection of sentiments was performed through selected phrases, which were chosen via a number of pre-specified POS patterns, most including an <em>adjective</em> or an <em>adverb</em>.</p>
+<p>Moreover, most of the literature on sentiment analysis has focused on text written in English and, consequently, most of the resources developed, e.g., sentiment lexicons and corpora, are in English. Adapting such resources to other languages can be considered as a domain adaptation problem.</p>
+<h3>From Heuristics to discourse structure</h3>
+<p>Several unsupervised learning approaches rely on the creation of a sentiment lexicon, which is later used to determine the degree of positivity (or subjectivity) of a text unit.</p>
+<p>The crucial component is, therefore, the creation of the lexicon via the unsupervised labelling of words or phrases with their sentiment polarity or subjectivity [1].</p>
+<p>Because such approaches lacked the capability of detecting novel expressions of sentiment, later works focussed on propagating the valence of seed words (for which the polarity is known) to terms that co-occur with them in general text (or in dictionary glosses), or to synonyms and words that co-occur with them in other WordNet-defined relations.</p>
 <p>Regression techniques are often employed for the prediction of the degree of positivity in opinionated documents such as product reviews.</p>
 <p>Regression, in fact, allows to implicitly model similarity relationships between classes that correspond to points on a scale, such as the number of ‘stars’ given by a reviewer [1]</p>
-<p>In other works, finally, the detection of sentiments was performed through selected phrases, which were chosen via a number of pre-specified POS patterns, most including an adjective or an adverb.</p>
 <p>Modelling discourse structure, such as twists and turns in documents, contributes to a more effective overall sentiment labelling.</p>
 <p>More recent studies have underlined that position is particularly relevant in the context of sentiment summarisation.</p>
-<p>Moreover, most of the literature on sentiment analysis has focused on text written in English and, consequently, most of the resources developed, e.g., sentiment lexicons and corpora, are in English.</p>
 <p>In particular, in contrast to topic-based text summarisation, where the incipits of articles usually serve as a strong baseline, the last n sentences of a review have been shown to serve as a much better summary of the overall sentiment of the document, and to be almost as good as the n (automatically-computed) most subjective sentences [7].</p>
-<p>Adapting such resources to other languages can be considered as a domain adaptation problem.</p>
-<p>Several unsupervised learning approaches rely on the creation of a sentiment lexicon, which is later used to determine the degree of positivity (or subjectivity) of a text unit.</p>
+<h3>From coarse- to fine-grained analysis</h3>
 <p>The evolution of research works in the field of opinion mining and sentiment analysis can be seen not only in the use of more and more sophisticated techniques, but also in the different depths of analysis adopted.</p>
-<p>The crucial component is, therefore, the creation of the lexicon via the unsupervised labelling of words or phrases with their sentiment polarity or subjectivity [1].</p>
 <p>However, opinions and sentiments do not occur only at document-level, nor are they limited to a single valence or target.</p>
-<p>Because such approaches lacked the capability of detecting novel expressions of sentiment, later works focussed on propagating the valence of seed words (for which the polarity is known) to terms that co-occur with them in general text (or in dictionary glosses), or to synonyms and words that co-occur with them in other WordNet-defined relations.</p>
 <p>Contrary or complementary attitudes toward the same topic or multiple topics can be present across the span of a document</p>
 <p>Hence, later works adopted a segment-level opinion analysis aiming to distinguish sentimental from non- sentimental sections, e.g., by using graph-based techniques for segmenting sections of a document on the basis of their subjectivity [7], or by performing a classification based on some fixed syntactic phrases that are likely to be used to express opinions [11], or by bootstrapping using a small set of seed opinion words and a knowledge base such as WordNet [12].</p>
 <p>In other works, text analysis granularity has been taken down to sentence-level, e.g., by using presence of opinion-bearing lexical items (single words or n-grams) to detect subjective sentences [13], or by using semantic frames for identifying the topics (or targets) of sentiment [14].</p>
-<p>Though often outperforming pure keyword spotting, there are two main problems with the approach. First, lexical affinity, operating solely on the word-level, can easily be tricked by sentences like “I avoided an accident" (negation) and “I met my girlfriend by accident” (other word senses). Second, lexical affinity probabilities are often biased toward text of a particular genre, dictated by the source of the linguistic corpora.</p>
 <p>Even sentence-level approaches, however, often fail to correctly discover sentiments on entities and/or their aspects. To this end, other works adopt an aspect-level approach [15], [16], [17], which is based on the idea that an opinion consists of targets and sentiments associated to them.</p>
-<p>Statistical methods, such as Bayesian inference and support vector machines, have been popular for affect classification of texts and have been used by researchers on projects such as Pang’s movie review classifier [9] and many others [10], [15], [24].</p>
 <p>Based on this level of analysis, a structured summary of opinions about entities and their aspects can be produced and, hence, more accurate statistics about such aspects can be drawn.</p>
+<h3>From keywords to concepts</h3>
 <p>The evolution of sentiment analysis research, finally, can be studied in terms of the different tokens, or building blocks, of the analysis, and the implicit information associated with them. In this sense, existing approaches can be grouped into four main categories: keyword spotting, lexical affinity, statistical methods, and concept-based techniques.</p>
+<p>Keyword spotting is the most naïve approach and probably also the most popular because of its accessibility and economy. Text is classified into affect categories based on the presence of fairly unambiguous affect words like ‘happy’, ‘sad’, ‘afraid’, and ‘bored’.</p>
+<p>The weaknesses of this approach lie in two areas: poor recognition of affect when negation is involved and reliance on surface features. About its first weakness, while the approach can correctly classify the sentence “today was a happy day” as being happy, it is likely to fail on a sentence like “today wasn’t a happy day at all”. About its second weakness, the approach relies on the presence of obvious affect words which are only surface features of the prose.</p>
+<p>Lexical affinity is slightly more sophisticated than keyword spotting as, rather than simply detecting obvious affect words, it assigns arbitrary words a probabilistic ‘affinity’ for a particular emotion.</p>
+<p>Though often outperforming pure keyword spotting, there are two main problems with the approach. First, lexical affinity, operating solely on the word-level, can easily be tricked by sentences like “I avoided an accident" (negation) and “I met my girlfriend by accident” (other word senses). Second, lexical affinity probabilities are often biased toward text of a particular genre, dictated by the source of the linguistic corpora.</p>
+<p>Statistical methods, such as Bayesian inference and support vector machines, have been popular for affect classification of texts and have been used by researchers on projects such as Pang’s movie review classifier [9] and many others [10], [15], [24].</p>
 <p>However, statistical methods are generally semantically weak, meaning that, with the exception of obvious affect keywords, other lexical or co-occurrence elements in a statistical model have little predictive value individually.</p>
 <p>As a result, statistical text classifiers only work with acceptable accuracy when given a sufficiently large text input.</p>
-<p>Keyword spotting is the most naïve approach and probably also the most popular because of its accessibility and economy. Text is classified into affect categories based on the presence of fairly unambiguous affect words like ‘happy’, ‘sad’, ‘afraid’, and ‘bored’.</p>
 <p>So, while these methods may be able to affectively classify user’s text on the page- or paragraph-level, they do not work well on smaller text units such as sentences or clauses.</p>
 <p>Concept-based approaches, in turn, focus on a semantic analysis of text through the use of web ontologies [25] or semantic networks [26], [27], which allow grasping the conceptual and affective information associated with natural language opinions.</p>
-<p>The weaknesses of this approach lie in two areas: poor recognition of affect when negation is involved and reliance on surface features. About its first weakness, while the approach can correctly classify the sentence “today was a happy day” as being happy, it is likely to fail on a sentence like “today wasn’t a happy day at all”. About its second weakness, the approach relies on the presence of obvious affect words which are only surface features of the prose.</p>
 <p>Differently from purely syntactical techniques, in fact, concept-based approaches are able to detect also sentiments that are expressed in a subtle manner, e.g., through the analysis of concepts that do not explicitly convey any emotion, but which are implicitly linked to other concepts that do so.</p>
 <p>The validity of concept-based approaches mainly depends on the depth and breadth of the employed knowledge bases. Without a comprehensive resource that encompasses human knowledge, in fact, it is not easy for an opinion mining system to grasp the semantics associated with natural language text.</p>
 <p>Another limitation of semantic approaches is in the typicality of their knowledge bases.</p>
 <p>Knowledge representation, in fact, is usually strictly defined and does not allow handling different concept nuances, as the inference of semantic and affective features associated with concepts is bounded by the fixed/flat representation.</p>
-<p>Lexical affinity is slightly more sophisticated than keyword spotting as, rather than simply detecting obvious affect words, it assigns arbitrary words a probabilistic ‘affinity’ for a particular emotion.</p>
+<h2>Multimodal sentiment analysis</h2>
+<p>A larger body of literature on how to handle linguistic, acoustic, and potentially also video information exists in the related field of affect analysis.</p>
+<p>Yet, linguistic information is based on the transcript of the spoken content rather than on automatic speech recognition output.</p>
+<p>Overall, multimodal sentiment analysis is thus yet to be seen more frequently. It certainly holds great promises from both, an application point of view for example when textual- transcripts are not available, and a performance point of view owing to synergy effects and fail-safeness.</p>
+<h2>Discussion</h2>
+<p>In recent years, sentiment analysis research is gradually setting itself as a field in between mere NLP and natural language understanding.</p>
 <p>Following such a trend, we envision the future of sentiment analysis research to move towards a content-, concept-, and context-based analysis of natural language text, supported by time-efficient parsing techniques suitable for big social data analysis [32].</p>
 <p>The processing at content/syntactic-level will still be heavily needed for the collection of opinions over the Web, while filtering out non-opinionated user-generated contents (subjectivity detection), and for accordingly balancing the weight/trustworthiness of such opinions with respect to their source.</p>
 <p>The analysis at concept/semantic-level, instead, is intended to infer the semantic and affective information associated with natural language opinions and, hence, to enable a comparative fine-grained feature-based sentiment analysis.</p>
-<p>A larger body of literature on how to handle linguistic, acoustic, and potentially also video information exists in the related field of affect analysis.</p>
 <p>The context/intent-level analysis, finally, will ensure that all the gathered opinions are relevant for the specific user.</p>
 <p>In the Era of Social Context, where intelligent system will have access to a great deal of personal identities and social relationships, opinion mining will be tailored to each user’s preferences and intent.</p>
-<p>Yet, linguistic information is based on the transcript of the spoken content rather than on automatic speech recognition output.</p>
-<p>Overall, multimodal sentiment analysis is thus yet to be seen more frequently. It certainly holds great promises from both, an application point of view for example when textual- transcripts are not available, and a performance point of view owing to synergy effects and fail-safeness.</p>
-<p>In recent years, sentiment analysis research is gradually setting itself as a field in between mere NLP and natural language understanding.</p>
+<h2>Conclusion</h2>
 <p>Opinion mining and sentiment analysis are research fields inextricably bound to the affective sciences that attempt to understand human emotions."</p>
         
         
