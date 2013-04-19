@@ -30,5 +30,5 @@ The strsplit function will throw an error if the split character is not matched;
 
 With the function defined, we will use the lapply function, short for “list-apply,” to iterate this function over all strings in the Location column.
 
-The plyr family of functions work a bit like the map-reduce-style data aggregation tools that have risen in popularity over the past several years. They attempt to group data in some specific way that was meaningful to all observations, and then do some calcula- tion on each of these groups and return the results.
+The `plyr` family of functions work a bit like the map-reduce-style data aggregation tools that have risen in popularity over the past several years. They attempt to group data in some specific way that was meaningful to all observations, and then do some calcula- tion on each of these groups and return the results.
 
