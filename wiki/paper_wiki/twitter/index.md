@@ -6,13 +6,17 @@ Chakoumakos, R., Trusheim, S., & Yendluri, V. (2011). [Automated Market Sentimen
 
 Danescu-Niculescu-Mizil C, Gamon M, Dumais S. (2011). [Mark My Words! Linguistic Style Accommodation in Social Media](Danescu2011). DanescuNiculescuMizil:2009p14485
 
+Kıcıman. (2010). [Language Differences and Metadata Features on Twitter](Kiciman2010). Kcman:2010p1800
+
 Gimpel et al. (2010). [Part-of-Speech Tagging for Twitter: Annotation, Features and Experiments](Gimpel2010). Gimpel:2010p17813
 
 Go, Bhayani & Huang. (2009). [Twitter sentiment classification using distant supervision](Go2009). Go:2009p1068
 
 Go, A. & Bhayani, R. (2010). [Exploiting the Unique Characteristics of Tweets for Sentiment Analysis](Go2010). Go:2010p1773
 
-Jalbuenai, M. (2013). [Linguistic Features of English in Twitter. MSEUF Research Studies](Jalbuenai2013)
+Jalbuenai, M. (2013). [Linguistic Features of English in Twitter. MSEUF Research Studies](Jalbuenai2013). Jalbuena:2013p30963
+
+Krishnamurthy B, Gill P, & Arlitt M. (2008). [A few chirps about twitter](Krishnamurthy2008). Krishnamurthy:2008p4789 
 
 Mittal, A., & Goel, A. (2011). [Stock Prediction Using Twitter Sentiment Analysis](Mittal2011). Mittal2011
 
@@ -25,6 +29,8 @@ Ritter, A., Cherry, C., Dolan, B. (2010). [Unsupervised modeling of twitter conv
 Ruiz EJ, Hristidis V, Castillo C, Gionis A, Jaimes A. (2012). [Correlating financial time series with micro-blogging activity](Ruiz2012). Ruiz:2012p30821
 
 Tonkin E., Pfeiffer H., Tourte G. (2012). [Twitter, information sharing and the London riots?](Tonkin2012). Tonkin:2012p26178
+
+Zappavigna, M. (2011). [Ambient affiliation: A linguistic perspective on Twitter](Zappavigna2011).
 
 Zhang, X., Fuehres H., Gloor P. (2010). [Predicting stock market indicators through Twitter–“I hope it is not as bad as I fear”](Zhang2010). Zhang:2010p26180
 
