@@ -12,6 +12,8 @@ Go, Bhayani & Huang. (2009). [Twitter sentiment classification using distant sup
 
 Go, A. & Bhayani, R. (2010). [Exploiting the Unique Characteristics of Tweets for Sentiment Analysis](Go2010). Go:2010p1773
 
+Jalbuenai, M. (2013). [Linguistic Features of English in Twitter. MSEUF Research Studies](Jalbuenai2013)
+
 Mittal, A., & Goel, A. (2011). [Stock Prediction Using Twitter Sentiment Analysis](Mittal2011). Mittal2011
 
 Morstatter et al. (2013). [Is the Sample Good Enough? Comparing Data from Twitter's Streaming API with Twitter's Firehose](Morstatter2013). Morstatter:2013p30599
@@ -19,6 +21,8 @@ Morstatter et al. (2013). [Is the Sample Good Enough? Comparing Data from Twitte
 O'Connor, B., Balasubramanyan, r., Routledge, B., & Smith, N. (2010). [From Tweets to polls: Linking text sentiment to public opinion time seriesz.](Oconnor2010). OConnor:2010p962
 
 Ritter, A., Cherry, C., Dolan, B. (2010). [Unsupervised modeling of twitter conversations](RItter2010). Ritter:2010p14612
+
+Ruiz EJ, Hristidis V, Castillo C, Gionis A, Jaimes A. (2012). [Correlating financial time series with micro-blogging activity](Ruiz2012). Ruiz:2012p30821
 
 Tonkin E., Pfeiffer H., Tourte G. (2012). [Twitter, information sharing and the London riots?](Tonkin2012). Tonkin:2012p26178
 
