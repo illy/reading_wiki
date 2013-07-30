@@ -1,4 +1,4 @@
-[![Stories in Ready](http://badge.waffle.io/illy/reading_wiki.png)](http://waffle.io/illy/reading_wiki)  
+[![Stories in Ready](https://badge.waffle.io/illy/reading_wiki.png)](http://waffle.io/illy/reading_wiki)  
 Reading wiki
 ============
 
